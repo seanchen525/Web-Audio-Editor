@@ -11,11 +11,13 @@ Warning: this repo is only a proof of concept and the code is not perfect ;)
 ## Setup
 
 0. You need node.js, grunt, redis and CouchDB on your computer
-1. `npm install`
-2. Copy `server/config/config.js.sample` to `server/config/config.js` and fill it with your credentials
-3. `grunt w`
-4. `node server.js`
-5. `open http://localhost:3000`
+1. start couchDB(cmd: `sudo service couchdb start`; http://localhost:5984/_utils/ this is couchDB GUI webpage) and redis(cmd: `redis-server`);(Ubuntu Env)
+2. `npm install`
+3. Copy `server/config/config.js.sample` to `server/config/config.js` and fill it with your credentials
+4. create two database and views. cd ../scripts. `node create_database.js` and `node create_designdocs.js`
+5. `grunt w`
+6. `node server.js`
+7. `open http://localhost:3000`
 
 ## Understanding the code
 
