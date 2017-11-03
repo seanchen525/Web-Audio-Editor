@@ -12,6 +12,7 @@ module.exports = function(app, auth){
   };
 
   var renderMe = function(req, res){
+    console.log(req.user);
     res.redirect('/me');
   };
 
@@ -32,6 +33,7 @@ module.exports = function(app, auth){
     successRedirect: '/me',
     failureRedirect: '/login',
     failureFlash: true,
+    successFlash: true,
     failureMessage: 'Could not log you in!'
   }), renderMe);
 

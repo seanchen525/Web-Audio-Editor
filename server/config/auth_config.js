@@ -21,7 +21,7 @@ var authenticate = function(username, pw, done){
           return done(null, null, err);
         else
           // if all went ell, the user is can be authenticated
-          done(null, user);
+          return done(null, user);
       })
     }
   });

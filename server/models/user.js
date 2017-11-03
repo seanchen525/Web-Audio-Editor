@@ -10,7 +10,7 @@ module.exports = {
   findByName: function(name, cb){
     db.view('user/byUsername', { key: name }, function(err, res){
       if(err || res.length == 0)
-        return cb(null, null);
+        return cb("not found", null);
       cb(null, res[0].value);
     });
   },

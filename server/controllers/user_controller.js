@@ -10,7 +10,7 @@ module.exports = {
     };
 
     var password = req.body.password;
-
+    
     User.createWithPassword(data, password, function(err, user){
       // something went wrong
       if(err || !user)

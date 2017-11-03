@@ -18,7 +18,7 @@ module.exports = {
 
     // save the date of creation
     data.created_at = Date.now();
-
+    console.log(data);
     db.save(data, function(err, res){
       if(err)
         return cb(err)

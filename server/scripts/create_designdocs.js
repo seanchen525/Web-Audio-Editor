@@ -10,3 +10,15 @@ db.save('_design/user', {
     }
   }
 });
+
+var db_bus = connection.database('audio-editor-data');
+db_bus.save('_design/arrangementByUser',{
+  views:{
+    byUserId: {
+      map: "function (doc) { emit(doc.owner_id, doc); }"
+    },
+    sharedWithUserId: {
+      map: "function (doc) { emit(doc.shared_with, doc); }"
+    }
+  }
+});

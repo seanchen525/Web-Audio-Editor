@@ -15,7 +15,7 @@ module.exports = {
     if(!req.user) return res.json({messages: 'Unauthorized, please log in.'}, 404);
     var ownerId = req.user._id;
     var title = req.body.title;
-
+    
     Arrangement.create(title, ownerId, function(err, arrangement){
       if(err){
         return res.json({message: err}, 500);
